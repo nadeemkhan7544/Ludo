@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Whoes Won</title>
+
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		#heading{
+			width: 100%;
+			height: 10vh;
+			text-align: center;
+			font-size: 40px;
+			line-height: 10vh;
+			/*background-color: yellow;*/
+		}
+
+		.dice_result{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			text-align: center;
+			width: 100%;
+			height: 10vh;
+			font-size: 30px;
+			line-height: 10vh;
+		}
+
+		.center{
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.left_side{
+			width: 50%;
+			height: 80vh;
+			/*background-color: red;*/
+		}
+		.left_side h2{
+			text-align: center;
+			margin-top: 20px;
+			font-size: 40px;
+		}
+		.left_side img{
+			width: 200px;
+			position: relative;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			box-sizing: border-box;
+		}
+		.left_side button{
+			width: 200px;
+			height: 50px;
+			font-size: 25px;
+			font-weight: bold;
+			color: white;
+			text-shadow: 1px 1px 10px white;
+			position: relative;
+			top: 30%;
+			left: 50%;
+			border: none;
+			outline: none;
+			background-color: skyblue;
+			transform: translate(-50%,-50%);
+			transition: 0.5s ease;
+		}
+		.left_side button:hover{
+			border: 1px solid black;
+			border-top-left-radius:20px;
+			border-bottom-right-radius:20px;
+			letter-spacing: 5px;
+			box-shadow: 1px 1px 8px 2px black;
+		}
+
+		.right_side{
+			width: 50%;
+			height: 80vh;
+			/*background-color: green;*/
+		}
+
+		.right_side h2{
+			text-align: center;
+			margin-top: 20px;
+			font-size: 40px;
+		}
+		.right_side img{
+			width: 200px;
+			position: relative;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+		.right_side button{
+			width: 200px;
+			height: 50px;
+			font-size: 25px;
+			font-weight: bold;
+			color: white;
+			text-shadow: 1px 1px 10px white;
+			position: relative;
+			top: 30%;
+			left: 50%;
+			border: none;
+			outline: none;
+			background-color: skyblue;
+			transform: translate(-50%,-50%);
+			transition: 0.5s ease;
+		}
+		.right_side button:hover{
+			border: 1px solid black;
+			border-top-left-radius:20px ;
+			border-bottom-right-radius:20px ;
+			letter-spacing: 5px;
+			box-shadow: 1px 1px 8px 2px black;
+
+		}
+	</style>
+</head>
+<body>
+	<h1 id="heading">Whoes Won Mini Game</h1>
+
+	<div class="dice_result">
+
+		<h2 id="result">00</h2>
+		<h3 id="result2">00</h3>
+
+	</div>
+	
+
+	<div class="center">
+
+		<div class="left_side">
+		<h2>Player 1</h2>
+		<img src="ddice6.png" id="change"><br>
+		<button id="player1" onclick="win()">Click</button>
+		</div>
+
+		<div class="right_side">
+		<h2>Player 2</h2>
+		<img src="ddice6.png" id="change2"><br>
+		<button id="player2" onclick="win2()">Click</button>
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+
+		function win(){
+		let img = document.getElementById('change');
+		let Num = Math.floor(Math.random()*6+1);
+		img.src = `ddice${Num}.png`;
+		document.getElementById("result").innerHTML = Num;
+	}
+		function win2(){
+		let img = document.getElementById('change2');
+		let Num2 = Math.floor(Math.random()*6+1);
+		img.src = `ddice${Num2}.png`;
+		// img.src = "dice"+Num2+".png";
+		document.getElementById("result2").innerHTML = Num2;
+	}
+		
+		
+
+	</script>
+
+</body>
+</html>
